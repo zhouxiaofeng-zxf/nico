@@ -44,7 +44,7 @@ nico是一种最简单易于记忆的个性化助记词生成方案.用户可以
 ## 安装：
 
 ```console
-go mod download https://github.com/zhouxiaofeng-zxf/nico.git
+git clone https://github.com/zhouxiaofeng-zxf/nico.git
 ```
 
 ### 可以参考代码中的main.go和bip39_pro_test.go文件
