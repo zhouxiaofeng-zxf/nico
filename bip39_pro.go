@@ -1,7 +1,7 @@
 package nico
 
 import (
-	"crypto/sha1"
+	"crypto/sha256"
 	"errors"
 	"github.com/tyler-smith/go-bip39"
 	"math/big"
@@ -11,8 +11,7 @@ import (
 )
 
 func getHashCode(str string) []byte {
-	data := []byte(str)
-	hash := sha1.Sum(data)
+	hash := sha256.Sum256([]byte(str))
 	return hash[:]
 }
 
@@ -27,7 +26,7 @@ func NewEntropyPro(words string, bitSize int) ([]byte, error) {
 	wordsStr := strings.ReplaceAll(words, " ", "")
 	//validateWordsSize
 	if len(wordList) < sentenceLength || len(wordList) > 3*sentenceLength || utf8.RuneCountInString(wordsStr) > 3*bitSize {
-		return nil, errors.New("字符格式长度错误")
+		return nil, errors.New("words length err")
 	}
 	// words hash
 	wordsHash := getHashCode(wordsStr)

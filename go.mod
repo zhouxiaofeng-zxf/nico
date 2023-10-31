@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/miguelmota/go-ethereum-hdwallet v0.1.1
 	github.com/tyler-smith/go-bip32 v1.0.0
-	github.com/tyler-smith/go-bip39 v1.0.1-0.20181017060643-dbb3b84ba2ef
+	github.com/tyler-smith/go-bip39 v1.1.0
 
 )
 
