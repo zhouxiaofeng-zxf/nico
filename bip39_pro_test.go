@@ -1,4 +1,4 @@
-package bip39
+package nico
 
 import (
 	"encoding/hex"
@@ -9,12 +9,12 @@ import (
 	"testing"
 )
 
-func TestEntropySuper(t *testing.T) {
-	entrySuper, err := NewEntropySuper("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
-	entrySuperString := hex.EncodeToString(entrySuper)
-	fmt.Println("entrySuperString: ", entrySuperString)
-	m, err := bip39.NewMnemonic(entrySuper)
-	fmt.Println("entrySuper Mnemonic :", m)
+func TestEntropyPro(t *testing.T) {
+	entryPro, err := NewEntropyPro("君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx", 128)
+	entryProString := hex.EncodeToString(entryPro)
+	fmt.Println("entryProString: ", entryProString)
+	m, err := bip39.NewMnemonic(entryPro)
+	fmt.Println("entryPro Mnemonic :", m)
 	ent, err := bip39.EntropyFromMnemonic(m)
 	//ent, err := EntropyFromMnemonic(m)
 	entString := hex.EncodeToString(ent)

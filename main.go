@@ -1,4 +1,4 @@
-package bip39
+package nico
 
 import (
 	"encoding/hex"
@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Generate a mnemonic for memorization or user-friendly seeds
-	entropy, _ := NewEntropySuper("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
+	entropy, _ := NewEntropyPro("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
 	fmt.Println("entropy: ", entropy)
 
 	mnemonic, _ := bip39.NewMnemonic(entropy)
@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("entropy: ", entropy2)
 	entropyString := hex.EncodeToString(entropy2)
 	fmt.Println("entString: ", entropyString)
-	
+
 	// Generate a Bip32 HD wallet for the mnemonic and a user supplied password
 	seed := bip39.NewSeed(mnemonic, "Secret Passphrase")
 

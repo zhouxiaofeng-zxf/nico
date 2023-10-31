@@ -1,4 +1,4 @@
-package bip39
+package nico
 
 import (
 	"crypto/sha1"
@@ -16,7 +16,7 @@ func getHashCode(str string) []byte {
 	return hash[:]
 }
 
-func NewEntropySuper(words string, bitSize int) ([]byte, error) {
+func NewEntropyPro(words string, bitSize int) ([]byte, error) {
 	if err := validateEntropyBitSize(bitSize); err != nil {
 		return nil, err
 	}
