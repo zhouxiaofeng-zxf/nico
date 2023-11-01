@@ -13,30 +13,30 @@ nico是一种最简单易于记忆的个性化助记词生成方案.用户可以
 ### 案例1 诗 将进酒 李白 : 
 自定义语句: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回
 
-对应的熵: 6140274fd3a01382a89c0e230303e051
+对应的熵: 3415721a86f546d7fdc95b765656b504
 
-对应的助记词: genuine abuse stadium point abuse scout pen limb cart blossom way penalty
+对应的助记词: cross process mammal assume federal hip warm clock iron razor pull announce
 
 ### 案例2 诗 将进酒 李白(进行不同的组合排列,把不见和天上来合为一组数据):  
-自定义语句: 君 不见 ， 黄 河 之 水 天上来 ， 奔 流 到 海 不 复 回
+自定义语句: 君不见 ， 黄 河 之 水 天上来 ， 奔 流 到 海 不 复 回
 
-对应的熵: 951837426fe31789151198b72f29b251
+对应的熵: 87d57173407087b56ebd419da6e8ddac
 
-对应的助记词: never script spatial thank cousin setup february credit rescue junk hold permit
+对应的助记词: march process fresh liberty anchor survey road popular oval dance danger floor
 
 ### 案例3 歌曲 my love westlife (支持多语言,不受语言限制):
 自定义语句: an empty street an empty house a hole inside my heart 西域男孩 my love
 
-对应的熵: 3644499e6722c180a678ecedf69c46a9
+对应的熵: 3b4944936a2fcc8dab75e1e0fb914ba4
 
-对应的助记词: curve car guide soft clown scare okay budget unknown reject balance false
+对应的助记词: deputy enforce cave stairs wolf egg punch rotate thought symptom fancy embody
 
 #### 说明:用户可以根据自己的喜好,方便记忆的自定义语句来获取到对应的助记词和熵,当然为了保证语句不易被恶意获取,可以对自定义语句进行简单的加工增加一定的复杂度.用户可自由发挥,改变组合,增加一些随机密码等.
 例如
 
-原句:  君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回             ->对应助记词: genuine abuse stadium point abuse scout pen limb cart blossom way penalty
+原句:  君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回             ->对应助记词: cross process mammal assume federal hip warm clock iron razor pull announce
 
-修饰后: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx   ->对应助记词: harsh door spin resemble like shed liquid liar climb flame wheel raven
+修饰后: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx   ->对应助记词: exhaust icon flash wild toilet stone bracket dune artwork harvest inform write
 
 
 

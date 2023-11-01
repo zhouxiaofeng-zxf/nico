@@ -3,11 +3,18 @@ package nico
 import (
 	"crypto/sha256"
 	"errors"
-	"github.com/tyler-smith/go-bip39"
 	"math/big"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+)
+
+var (
+	// ErrInvalidWordsLength is returned when trying to use word set with an invalid size.
+	ErrInvalidWordsLength = errors.New("Invalid words length")
+
+	// ErrEntropyLengthInvalid is returned when trying to use an entropy set with an invalid size.
+	ErrEntropyLengthInvalid = errors.New("Entropy length must be [128, 256] and a multiple of 32")
 )
 
 func getHashCode(str string) []byte {
@@ -22,14 +29,13 @@ func NewEntropyPro(words string, bitSize int) ([]byte, error) {
 	byteLength := bitSize / 8 //byte length
 
 	sentenceLength := byteLength / 2 // sentence Length
-	wordList := strings.Split(strings.TrimSpace(words), " ")
-	wordsStr := strings.ReplaceAll(words, " ", "")
+	wordList := strings.Fields(words)
 	//validateWordsSize
-	if len(wordList) < sentenceLength || len(wordList) > 3*sentenceLength || utf8.RuneCountInString(wordsStr) > 3*bitSize {
-		return nil, errors.New("words length err")
+	if len(wordList) < sentenceLength || len(wordList) > 3*sentenceLength || utf8.RuneCountInString(words) > 3*bitSize {
+		return nil, ErrInvalidWordsLength
 	}
 	// words hash
-	wordsHash := getHashCode(wordsStr)
+	wordsHash := getHashCode(words)
 
 	// Throw away big.Int for AND masking.
 	sByte := make([]byte, 0)
@@ -62,7 +68,7 @@ func padByteSliceSuper(slice []byte, length int) []byte {
 
 func validateEntropyBitSize(bitSize int) error {
 	if (bitSize%32) != 0 || bitSize < 128 || bitSize > 256 {
-		return bip39.ErrEntropyLengthInvalid
+		return ErrEntropyLengthInvalid
 	}
 	return nil
 }
