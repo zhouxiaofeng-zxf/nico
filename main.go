@@ -1,4 +1,4 @@
-package nico
+package main
 
 import (
 	"encoding/hex"
