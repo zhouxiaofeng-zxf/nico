@@ -1,4 +1,4 @@
-module nico
+module github.com/zhouxiaofeng-zxf/nico
 
 go 1.18
 
