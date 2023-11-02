@@ -2,10 +2,10 @@
 ## Nico
 Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以自定义任何语句,支持多语言没有语言限制,映射出对应的助记词,从而代替助记词的记忆.
 这是基于BIP-39提案的升级,使用户更加方便有效的获得自己的助记词,不在当心助记词的忘记,甚至不用记下助记词,仅靠脑部记忆自定义的语句就行.
-代码原理主要是将自定义语句进行sha256算法处理生成对应的熵,在通过熵获得对应的助记词,并且此方法完全兼容bip39方案.
+代码原理主要是将自定义语句进行sha256算法处理生成对应的熵,在通过熵获得对应的助记词,并且此方法完全兼容bip39提案.
 
 ### 动机
-助记词,私钥是用户参与区块链和web3的钥匙.本人是web3的开发技术人员,有时候会经常用到不同的钱包,管理很多的助记词和公私钥.虽然bip39方案通过助记词方式已经大大提高了用户的体验,
+助记词,私钥是用户参与区块链和web3的钥匙.本人是web3的开发技术人员,有时候会经常用到不同的钱包,管理很多的助记词和公私钥.虽然bip39提案通过助记词方式已经大大提高了用户的体验,
 让用户越来越方便的管理自己的钱包和私钥地址.但是还是免不了助记词的难以记忆,需要用其他途径把助记词给备份.基于该痛点,我思考了以自定义语句方式生产对应的助记词,只需记住自定义语句即可
 
 
@@ -48,9 +48,9 @@ Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以
 ## Nico
 Nico is a simple and easy-to-remember personalized mnemonic generation scheme. Users can customize any sentence, support multiple languages without language restrictions, map out the corresponding mnemonic, and thus replace the mnemonic's memory.
 This is an upgraded version based on the BIP-39 proposals, making it easier and more effective for users to obtain their mnemonics, without worrying about forgetting the mnemonic, or even without having to write down the mnemonic. It only requires the user to remember the customized sentence.
-The principle of the code mainly involves processing the user-defined sentence with the sha256 algorithm to generate corresponding entropy, and then obtaining the corresponding mnemonic through entropy. This method is fully compatible with the bip39 scheme.
+The principle of the code mainly involves processing the user-defined sentence with the sha256 algorithm to generate corresponding entropy, and then obtaining the corresponding mnemonic through entropy. This method is fully compatible with the bip39 proposals.
 ### Motivation
-Mnemonics and private keys are the keys for users to participate in blockchain and web3. As a web3 development technician, I sometimes use different wallets and manage many mnemonics and public-private key pairs. Although the BIP39 scheme has greatly improved user experience through mnemonics, 
+Mnemonics and private keys are the keys for users to participate in blockchain and web3. As a web3 development technician, I sometimes use different wallets and manage many mnemonics and public-private key pairs. Although the BIP39 proposals has greatly improved user experience through mnemonics, 
 it still cannot avoid the problem of mnemonics being difficult to remember, and users need to use other ways to backup their mnemonics. Based on this pain point, I have thought of a method to generate corresponding mnemonics based on custom sentences. Users only need to remember their custom sentences.
 
 ## Example (spaces are used to separate each group of characters in UTF-8).
@@ -96,14 +96,14 @@ mnemonic: exhaust icon flash wild toilet stone bracket dune artwork harvest info
 git get https://github.com/zhouxiaofeng-zxf/nico.git
 ```
 
-### You can refer to the main.go and bip39_pro_test.go files in the code.
+### You can refer to the main.go and _pro_test.go files in the code.
 
 ```go
 package main
 
 import (
   "fmt"
-  "github.com/tyler-smith/go-bip39"
+  "github.com/tyler-smith/go-"
   "github.com/tyler-smith/go-bip32"
   "github.com/zhouxiaofeng-zxf/nico/util"
 )
@@ -111,10 +111,10 @@ import (
 func main(){
 	// Generate a mnemonic for memorization or user-friendly seeds
 	entropy, _ := util.NewEntropyPro("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
-	mnemonic, _ := bip39.NewMnemonic(entropy)
+	mnemonic, _ := .NewMnemonic(entropy)
 
 	// Generate a Bip32 HD wallet for the mnemonic and a user supplied password
-	seed := bip39.NewSeed(mnemonic, "Secret Passphrase")
+	seed := .NewSeed(mnemonic, "Secret Passphrase")
 
 	masterKey, _ := bip32.NewMasterKey(seed)
 	publicKey := masterKey.PublicKey()
