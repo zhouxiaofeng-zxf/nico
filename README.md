@@ -1,5 +1,6 @@
-# nico
-nico是一种最简单易于记忆的个性化助记词生成方案.用户可以自定义任何语句,支持多语言没有语言限制,映射出对应的助记词,从而代替助记词的记忆.
+# 中文
+## Nico
+Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以自定义任何语句,支持多语言没有语言限制,映射出对应的助记词,从而代替助记词的记忆.
 这是基于BIP-39方案的升级,使用户更加方便有效的获得自己的助记词,不在当心助记词的忘记,甚至不用记下助记词,仅靠脑部记忆自定义的语句就行.
 代码原理主要是将自定义语句进行sha256算法处理生成对应的熵,在通过熵获得对应的助记词,并且此方法完全兼容bip39方案.
 
@@ -41,13 +42,59 @@ nico是一种最简单易于记忆的个性化助记词生成方案.用户可以
 
 
 
-## 安装：
+
+
+# English
+## Nico
+Nico is a simple and easy-to-remember personalized mnemonic generation scheme. Users can customize any sentence, support multiple languages without language restrictions, map out the corresponding mnemonic, and thus replace the mnemonic's memory.
+This is an upgraded version based on the BIP-39 scheme, making it easier and more effective for users to obtain their mnemonics, without worrying about forgetting the mnemonic, or even without having to write down the mnemonic. It only requires the user to remember the customized sentence.
+The principle of the code mainly involves processing the user-defined sentence with the sha256 algorithm to generate corresponding entropy, and then obtaining the corresponding mnemonic through entropy. This method is fully compatible with the bip39 scheme.
+### Motivation
+Mnemonics and private keys are the keys for users to participate in blockchain and web3. As a web3 development technician, I sometimes use different wallets and manage many mnemonics and public-private key pairs. Although the BIP39 scheme has greatly improved user experience through mnemonics, 
+it still cannot avoid the problem of mnemonics being difficult to remember, and users need to use other ways to backup their mnemonics. Based on this pain point, I have thought of a method to generate corresponding mnemonics based on custom sentences. Users only need to remember their custom sentences.
+
+## Example (spaces are used to separate each group of characters in UTF-8).
+
+### Case 1 poem 将进酒 李白 :
+customize sentence: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回
+
+entropy: 3415721a86f546d7fdc95b765656b504
+
+mnemonic: cross process mammal assume federal hip warm clock iron razor pull announce
+
+### Case 2 poem 将进酒 李白(Make different combinations and arrangements to combine the '君不见' and '天上来'  into one set):
+customize sentence: 君不见 ， 黄 河 之 水 天上来 ， 奔 流 到 海 不 复 回
+
+entropy: 87d57173407087b56ebd419da6e8ddac
+
+mnemonic: march process fresh liberty anchor survey road popular oval dance danger floor
+
+### Case 3 song my love westlife (Supports multiple languages without language restrictions):
+customize sentence: an empty street an empty house a hole inside my heart 西域男孩 my love
+
+entropy: 3b4944936a2fcc8dab75e1e0fb914ba4
+
+mnemonic: deputy enforce cave stairs wolf egg punch rotate thought symptom fancy embody
+
+#### Note: Users can obtain the corresponding mnemonic and entropy according to their preferences and customizable sentences that are easy to remember. Of course, in order to ensure that the sentences are not easily obtained by malicious means, simple processing can be performed on the customizable sentences to add some complexity. Users can freely play with combinations, add random passwords, and so on.
+Example
+
+original sentence:  君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回             ->Corresponding mnemonic: cross process mammal assume federal hip warm clock iron razor pull announce
+
+revised sentence: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx   ->Corresponding mnemonic: exhaust icon flash wild toilet stone bracket dune artwork harvest inform write
+
+
+
+
+
+
+## installation：
 
 ```console
-git clone https://github.com/zhouxiaofeng-zxf/nico.git
+git get https://github.com/zhouxiaofeng-zxf/nico.git
 ```
 
-### 可以参考代码中的main.go和bip39_pro_test.go文件
+### You can refer to the main.go and bip39_pro_test.go files in the code.
 
 ```go
 package main
@@ -56,11 +103,12 @@ import (
   "fmt"
   "github.com/tyler-smith/go-bip39"
   "github.com/tyler-smith/go-bip32"
+  "github.com/zhouxiaofeng-zxf/nico/util"
 )
 
 func main(){
 	// Generate a mnemonic for memorization or user-friendly seeds
-	entropy, _ := NewEntropyPro("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
+	entropy, _ := util.NewEntropyPro("nico 床 前 明 月 光 , 疑 是 地 上 霜 .", 128)
 	mnemonic, _ := bip39.NewMnemonic(entropy)
 
 	// Generate a Bip32 HD wallet for the mnemonic and a user supplied password
