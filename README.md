@@ -79,9 +79,11 @@ mnemonic: deputy enforce cave stairs wolf egg punch rotate thought symptom fancy
 #### Note: Users can obtain the corresponding mnemonic and entropy according to their preferences and customizable sentences that are easy to remember. Of course, in order to ensure that the sentences are not easily obtained by malicious means, simple processing can be performed on the customizable sentences to add some complexity. Users can freely play with combinations, add random passwords, and so on.
 Example
 
-original sentence:  君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回             ->Corresponding mnemonic: cross process mammal assume federal hip warm clock iron razor pull announce
+original sentence:  君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回             
+mnemonic: cross process mammal assume federal hip warm clock iron razor pull announce
 
-revised sentence: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx   ->Corresponding mnemonic: exhaust icon flash wild toilet stone bracket dune artwork harvest inform write
+revised sentence: 君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回 1qaz@wsx   
+mnemonic: exhaust icon flash wild toilet stone bracket dune artwork harvest inform write
 
 
 

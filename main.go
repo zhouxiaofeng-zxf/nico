@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/hex"
 	"fmt"
 	"github.com/tyler-smith/go-bip32"
 	"github.com/tyler-smith/go-bip39"
@@ -15,11 +14,6 @@ func main() {
 
 	mnemonic, _ := bip39.NewMnemonic(entropy)
 	fmt.Println(" Mnemonic :", mnemonic)
-
-	entropy2, _ := bip39.EntropyFromMnemonic(mnemonic)
-	fmt.Println("entropy: ", entropy2)
-	entropyString := hex.EncodeToString(entropy2)
-	fmt.Println("entString: ", entropyString)
 
 	// Generate a Bip32 HD wallet for the mnemonic and a user supplied password
 	seed := bip39.NewSeed(mnemonic, "Secret Passphrase")
