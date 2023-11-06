@@ -1,6 +1,6 @@
 # 中文
 ## Nico
-Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以自定义任何语句,支持多语言没有语言限制,映射出对应的助记词,从而代替助记词的记忆.
+Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以自定义任何语句,支持多语言没有语言限制,映射出对应的助记词,从而代替助记词的记忆,支持多语言,没有语言限制.
 这是基于BIP-39提案的升级,使用户更加方便有效的获得自己的助记词,不在当心助记词的忘记,甚至不用记下助记词,仅靠脑部记忆自定义的语句就行.
 代码原理主要是将自定义语句进行sha256算法处理生成对应的熵,在通过熵获得对应的助记词,并且此方法完全兼容bip39提案.
 
@@ -46,7 +46,7 @@ Nico是一种最简单易于记忆的个性化助记词生成方案.用户可以
 
 # English
 ## Nico
-Nico is a simple and easy-to-remember personalized mnemonic generation scheme. Users can customize any sentence, support multiple languages without language restrictions, map out the corresponding mnemonic, and thus replace the mnemonic's memory.
+Nico is a simple and easy-to-remember personalized mnemonic generation scheme. Users can customize any sentence, map out the corresponding mnemonic, and thus replace the mnemonic's memory, support multiple languages without language restrictions.
 This is an upgraded version based on the BIP-39 proposals, making it easier and more effective for users to obtain their mnemonics, without worrying about forgetting the mnemonic, or even without having to write down the mnemonic. It only requires the user to remember the customized sentence.
 The principle of the code mainly involves processing the user-defined sentence with the sha256 algorithm to generate corresponding entropy, and then obtaining the corresponding mnemonic through entropy. This method is fully compatible with the bip39 proposals.
 ### Motivation
