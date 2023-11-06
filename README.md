@@ -103,7 +103,7 @@ package main
 
 import (
   "fmt"
-  "github.com/tyler-smith/go-"
+  "github.com/tyler-smith/go-bip39"
   "github.com/tyler-smith/go-bip32"
   "github.com/zhouxiaofeng-zxf/nico/util"
 )
