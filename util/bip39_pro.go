@@ -22,7 +22,7 @@ func getHashCode(str string) []byte {
 	return hash[:]
 }
 
-func NewEntropyPro(words string, bitSize int) ([]byte, error) {
+func NewEntropyFromWords(words string, bitSize int) ([]byte, error) {
 	if err := validateEntropyBitSize(bitSize); err != nil {
 		return nil, err
 	}
