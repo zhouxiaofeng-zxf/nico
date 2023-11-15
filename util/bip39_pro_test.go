@@ -10,7 +10,16 @@ import (
 )
 
 func TestEntropyPro(t *testing.T) {
-	entryPro, err := NewEntropyFromWords("an empty street an empty house a hole inside my heart 西域男孩 my love", 128)
+	list := []string{"君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回", "君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回"}
+	entryProList, err := NewEntropyFromWordsList(list, 256)
+	fmt.Println("entryProList: ", entryProList)
+	entryProListString := hex.EncodeToString(entryProList)
+	fmt.Println("entryProListString: ", entryProListString)
+	mList, err := bip39.NewMnemonic(entryProList)
+	fmt.Println("entryProList Mnemonic :", mList)
+
+	entryPro, err := NewEntropyFromWords("君 不 见 ， 黄 河 之 水 天 上 来 ， 奔 流 到 海 不 复 回", 128)
+	fmt.Println("entryProString: ", entryPro)
 	entryProString := hex.EncodeToString(entryPro)
 	fmt.Println("entryProString: ", entryProString)
 	m, err := bip39.NewMnemonic(entryPro)
